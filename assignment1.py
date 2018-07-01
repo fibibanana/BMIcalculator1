@@ -70,11 +70,11 @@ class BMIFrame(ttk.Frame):
         #add buttons that will allow user to select measurement type
         self.Imperial = tk.StringVar()
         ttk.Radiobutton(self, text="Select Imperial", variable=self.Type_Imperial, command=self.selected).grid(
-            column=1, row=4)
+            column=4, row=7)
 
         self.Metric = tk.StringVar()
         ttk.Radiobutton(self, text="Select Metric", variable=self.Type_Metric, command=self.selected).grid(
-            column=2, row=4)
+            column=5, row=7)
 
         #Add padding to all components
         for child in self.winfo_children(): #winfo = window info
