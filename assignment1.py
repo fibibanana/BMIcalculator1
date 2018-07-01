@@ -9,8 +9,7 @@ class BMIFrame(ttk.Frame):
         ttk.Frame.__init__(self, parent, padding="10 10 10 10") #10 px everywhere
         self.pack() #self variable makes sure that you can have several windows open at the same time with different values
 
-        # Define float variables for text entry fields
-        #add them as float variables!! and if else error: needs to be a number
+        # Define variables for text entry fields
         self.Height_feet = tk.IntVar() #variables can be shared across different parts of your programme
         self.Height_inch = tk.IntVar()
         self.Height_cm = tk.IntVar()
@@ -68,6 +67,7 @@ class BMIFrame(ttk.Frame):
                    command=self.calculate_bmi).grid(
             column=1, row=7, sticky=tk.E)
 
+        #add buttons that will allow user to select measurement type
         self.Imperial = tk.StringVar()
         ttk.Radiobutton(self, text="Select Imperial", variable=self.Type_Imperial, command=self.selected).grid(
             column=1, row=4)
@@ -81,10 +81,10 @@ class BMIFrame(ttk.Frame):
             child.grid_configure(padx=5, pady=3)
 
 
-    #if user selected Imperial, run this function
+    #if user selected Imperial, how do I run this function?
 
     def selected(self):
-     if tk.StringVar() == Type_Imperial             #i don't understand how to
+     if tk.StringVar() == Type_Imperial             
 
     Height_feet = float(self.Height_feet.get())
     Height_inch = float(self.Height_inch.get())
@@ -98,10 +98,8 @@ class BMIFrame(ttk.Frame):
     def calculate_bmi(self):
         bmi = (self.Weight_conversion / pow(self.Height_conversion, 2))
 
-
     # Display the BMI in the text field
     self.BMI.set(bmi)
-
 
     #If statements that tells you your BMI range
     def bmi_category(self, bmi):
@@ -122,13 +120,7 @@ class BMIFrame(ttk.Frame):
             print('There is an error with your input')
 
 
-    #check values (example)
-    '''if 0 < Height_cm < 300:
-        self.Height_cm = Height_cm
-    else: raise ValueError, "Invalid input for height", % Height_cm'''
-
-
-    #run this if metric is selected in the button
+    #how do I run this if metric is selected in the button?
 
     def selected(self):
      if self.Type_Metric == True
@@ -143,7 +135,6 @@ class BMIFrame(ttk.Frame):
 
     # Display the BMI in the text field
         self.BMI.set(bmi)
-
 
     #If statements that tells you your BMI range
 
